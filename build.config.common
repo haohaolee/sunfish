@@ -3,6 +3,7 @@ BRANCH=android-msm-sunfish-4.14
 CROSS_COMPILE=aarch64-linux-android-
 CROSS_COMPILE_ARM32=arm-linux-androideabi-
 DEFCONFIG=sunfish_defconfig
+LOCALVERSION=-HolyDragon.DV.1.0
 EXTRA_CMDS=''
 CLANG_PREBUILT_BIN=prebuilts-master/clang/host/linux-x86/clang-r377782b/bin/
 LD_LIBRARY_PATH=${ROOT_DIR}/prebuilts-master/clang/host/linux-x86/clang-r377782b/lib64:$LD_LIBRARY_PATH
