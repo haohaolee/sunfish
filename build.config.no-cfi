@@ -25,6 +25,8 @@ function update_nocfi_config() {
     -e CONFIG_TCP_CONG_ILLINOIS \
     -e CONFIG_TCP_CONG_DCTCP \
     -e CONFIG_TCP_CONG_BBR \
+    -d CONFIG_DEFAULT_CUBIC \
+    -e CONFIG_DEFAULT_BBR \
 
   (cd ${OUT_DIR} && \
     make O=${OUT_DIR} $archsubarch CROSS_COMPILE=${CROSS_COMPILE} olddefconfig)
