@@ -13,6 +13,18 @@ function update_nocfi_config() {
     -e CONFIG_TOUCHSCREEN_FTS \
     -e CONFIG_QCA_CLD_WLAN \
     -e CONFIG_QCA_CLD_WLAN_PROFILE="default" \
+    -e CONFIG_TCP_CONG_ADVANCED \
+    -e CONFIG_TCP_CONG_WESTWOOD \
+    -e CONFIG_TCP_CONG_HSTCP \
+    -e CONFIG_TCP_CONG_HYBLA \
+    -e CONFIG_TCP_CONG_VEGAS \
+    -e CONFIG_TCP_CONG_SCALABLE \
+    -e CONFIG_TCP_CONG_LP \
+    -e CONFIG_TCP_CONG_VENO \
+    -e CONFIG_TCP_CONG_YEAH \
+    -e CONFIG_TCP_CONG_ILLINOIS \
+    -e CONFIG_TCP_CONG_DCTCP \
+    -e CONFIG_TCP_CONG_BBR \
 
   (cd ${OUT_DIR} && \
     make O=${OUT_DIR} $archsubarch CROSS_COMPILE=${CROSS_COMPILE} olddefconfig)
