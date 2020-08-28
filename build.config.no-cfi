@@ -29,6 +29,7 @@ function update_nocfi_config() {
     -e CONFIG_DEFAULT_BBR \
     -e CONFIG_WIREGUARD \
     -e CONFIG_WIREGUARD_DEBUG \
+    -d CONFIG_LOCALVERSION_AUTO \
 
   (cd ${OUT_DIR} && \
     make O=${OUT_DIR} $archsubarch CROSS_COMPILE=${CROSS_COMPILE} olddefconfig)
