@@ -3,9 +3,7 @@ export PTPSUPPORT CONFIG_PTPSUPPORT_OBJ DWC_ETH_QOS_CONFIG_PTP
 #default values
 PTPSUPPORT=y	#ptp is enabled
 
-ifeq ($(RELEASE_PACKAGE),1)
 EXTRA_CFLAGS+=-DRELEASE_PACKAGE
-endif
 LBITS ?= $(shell getconf LONG_BIT)
 ifeq ($(LBITS),64)
 CCFLAGS += -m64
