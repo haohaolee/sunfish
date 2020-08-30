@@ -133,7 +133,7 @@ static void suspend_task(struct work_struct *work)
 
 static struct timer_list INACTIVITY_TIMER;
 
-static void dump_packet_util(const struct sk_buff *skb)
+static inline void dump_packet_util(const struct sk_buff *skb)
 {
 	char buffer[PACKET_DUMP_BUFFER];
 	unsigned int len, printlen;
@@ -760,7 +760,7 @@ static int add_entry_to_ht(struct gsb_if_info *info)
 	return 0;
 }
 
-static void display_cache(void)
+static inline void display_cache(void)
 {
 	struct gsb_if_info *curr;
 	struct hlist_node *tmp;
