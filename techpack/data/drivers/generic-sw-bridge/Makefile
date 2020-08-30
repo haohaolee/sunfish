@@ -16,7 +16,7 @@
 #
 KERNEL_SRC ?= /lib/modules/$(shell uname -r)/build
 obj-y += gsb.o
-MY_CFLAGS += -g
+MY_CFLAGS += -g -Wno-unused-const-variable -Wno-unused-parameter -Wno-unused-variable
 ccflags-y += ${MY_CFLAGS}
 CC += ${MY_CFLAGS}
 
