@@ -1043,7 +1043,7 @@ static int gsb_bind_if_to_ipa_bridge(struct gsb_if_info *if_info)
 	params_ptr->info.tx_dp_notify     = gsb_recv_ipa_notification_cb;
 	params_ptr->info.send_dl_skb      = (void *)&gsb_recv_dl_dp;
 	params_ptr->info.ipa_desc_size    = (if_info->ipa_free_desc_cnt + 1) *
-		sizeof(struct sps_iovec);
+		sizeof(struct sps_iovec *)-1;
 	//to do: fix mac address
 	switch (if_info->pdev->addr_assign_type)
 	{
