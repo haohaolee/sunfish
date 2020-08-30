@@ -101,6 +101,7 @@ function update_nocfi_config() {
     -e CONFIG_NTFS_FS \
     -d CONFIG_NTFS_DEBUG \
     -e CONFIG_NTFS_RW \
+    -e CONFIG_BOEFFLA_WL_BLOCKER \
 
   (cd ${OUT_DIR} && \
     make O=${OUT_DIR} $archsubarch CROSS_COMPILE=${CROSS_COMPILE} olddefconfig)
