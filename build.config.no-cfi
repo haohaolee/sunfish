@@ -98,6 +98,9 @@ function update_nocfi_config() {
     -e CONFIG_EXFAT_FS \
     -d CONFIG_EXFAT_DEBUG \
     -d CONFIG_EXFAT_UEVENT \
+    -e CONFIG_NTFS_FS \
+    -d CONFIG_NTFS_DEBUG \
+    -e CONFIG_NTFS_RW \
 
   (cd ${OUT_DIR} && \
     make O=${OUT_DIR} $archsubarch CROSS_COMPILE=${CROSS_COMPILE} olddefconfig)
