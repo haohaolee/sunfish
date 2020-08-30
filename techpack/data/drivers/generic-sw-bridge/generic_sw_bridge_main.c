@@ -2116,12 +2116,6 @@ static void __exit gsb_exit_module(void)
 	int ret = 0;
 	struct gsb_ctx *pgsb_ctx = __gc;
 
-	if (NULL == pgsb_ctx)
-	{
-		DEBUG_ERROR("Context is NULL\n");
-		return -EFAULT;
-	}
-
 	unregister_netdevice_notifier(&pgsb_ctx->gsb_dev_notifier);
 	unregister_pm_notifier(&pgsb_ctx->gsb_pm_notifier);
 
