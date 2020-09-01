@@ -1,18 +1,25 @@
-Linux kernel
-============
+# Kernel Tree for Pixel 4a (sunfish)
 
-This file was moved to Documentation/admin-guide/README.rst
+The Pixel 4a (codenamed _"sunfish"_) is a midrange smartphone from Google.
+It was released in August of 2020.
 
-Please notice that there are several guides for kernel developers and users.
-These guides can be rendered in a number of formats, like HTML and PDF.
+| Basic                   | Spec Sheet                                                                     |
+| -----------------------:|:-------------------------------------------------------------------------------|
+| CPU                     | Octa-core (2x2.20 GHz Kryo 470(CA76) Gold & 6x1.80 GHz Kryo 470(CA55) Silver)  |
+| Chipset                 | Qualcomm SDMMAGPIE Snapdragon 730G (7 nm)                                      |
+| GPU                     | Adreno 618                                                                     |
+| Memory                  | 6 GB LPDDR4X RAM                                                               |
+| Shipped Android Version | 10                                                                             |
+| Storage                 | 128 GB                                                                         |
+| Battery                 | Non-removable Li-Po 4000 mAh battery                                           |
+| Display                 | 5.81" OLED, 1080 x 2340 pixels, 19.5:9 ratio (~443 ppi density)                |
+| Camera (Back)           | 12.2 MP, f/1.7, 27mm (wide), 1/2.55", 1.4µm, dual pixel PDAF, OIS              |
+| Camera (Front)          | 8 MP, f/2.0, 24mm (wide), 1.12µm                                               |
+| Kernel Version          | 4.4.117                                                                        |
+| Stock Defconfig         | arch/arm64/configs/sunfish_defconfig                                           |
+| Build Config            | build.config.no-cfi                                                            |
+| Inline Defconfig        | arch/arm64/configs/HD_defconfig                                                |
+| -----------------------:|:-------------------------------------------------------------------------------|
 
-In order to build the documentation, use ``make htmldocs`` or
-``make pdfdocs``.
-
-There are various text files in the Documentation/ subdirectory,
-several of them using the Restructured Text markup notation.
-See Documentation/00-INDEX for a list of what is contained in each file.
-
-Please read the Documentation/process/changes.rst file, as it contains the
-requirements for building and running the kernel, and information about
-the problems which may result by upgrading your kernel.
+Build tree and manifest to build release version yourself can be found at:
+https://gitlab.com/hdpk/kernel_manifest/-/tree/sunfish-10
