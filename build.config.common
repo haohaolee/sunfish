@@ -1,5 +1,5 @@
 ARCH=arm64
-BRANCH=android-msm-pixel-4.14
+BRANCH=sunfish-11
 CROSS_COMPILE=aarch64-linux-android-
 CROSS_COMPILE_ARM32=arm-linux-androideabi-
 DEFCONFIG=sunfish_defconfig
