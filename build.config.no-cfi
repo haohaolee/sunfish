@@ -12,6 +12,7 @@ function update_nocfi_config() {
     -e CFI_PERMISSIVE \
     -e CFI_CLANG \
     -e CONFIG_TOUCHSCREEN_FTS \
+    -e CONFIG_TOUCHSCREEN_OFFLOAD \
     -e CONFIG_QCA_CLD_WLAN \
     -e CONFIG_QCA_CLD_WLAN_PROFILE="default" \
     -e CONFIG_WIREGUARD \
