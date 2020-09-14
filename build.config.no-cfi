@@ -6,6 +6,7 @@ function update_nocfi_config() {
   # Disable clang-specific options
   ${KERNEL_DIR}/scripts/config --file ${OUT_DIR}/.config \
     -e LTO \
+    -e CONFIG_THINLTO \
     -e LTO_CLANG \
     -e CFI \
     -e CFI_PERMISSIVE \
