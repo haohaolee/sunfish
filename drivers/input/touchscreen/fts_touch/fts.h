@@ -511,3 +511,4 @@ extern int fts_proc_remove(void);
 int fts_set_bus_ref(struct fts_ts_info *info, u16 ref, bool enable);
 
 #endif
+
