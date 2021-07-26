@@ -105,6 +105,8 @@ function update_nocfi_config() {
     -e CONFIG_NTFS_RW \
     -e CONFIG_BOEFFLA_WL_BLOCKER \
     -e USB_UAS \
+    -e CONFIG_USB_OTG \
+    -e CONFIG_USB_OTG_FSM \
 
   (cd ${OUT_DIR} && \
    make ${CC_LD_ARG} O=${OUT_DIR} olddefconfig)
