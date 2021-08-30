@@ -32,13 +32,10 @@
 #ifndef _LINUX_FTS_I2C_H_
 #define _LINUX_FTS_I2C_H_
 
-#define TOUCHSCREEN_HEATMAP
-
 #include <linux/device.h>
-#ifdef TOUCHSCREEN_HEATMAP
 #include <linux/input/heatmap.h>
-#endif
 #include <linux/pm_qos.h>
+#include <linux/input/touch_offload.h>
 #include <drm/drm_panel.h>
 #include "fts_lib/ftsSoftware.h"
 #include "fts_lib/ftsHardware.h"
@@ -205,7 +202,7 @@
 
 /**@}*/
 /*********************************************************/
-#ifdef TOUCHSCREEN_HEATMAP
+
 /* **** LOCAL HEATMAP FEATURE *** */
 #define LOCAL_HEATMAP_WIDTH 7
 #define LOCAL_HEATMAP_HEIGHT 7
@@ -224,7 +221,7 @@ struct heatmap_report {
 	strength_t data[LOCAL_HEATMAP_WIDTH * LOCAL_HEATMAP_HEIGHT];
 } __attribute__((packed));
 /* **** END **** */
-#endif
+
 /*
   * Configuration mode
   *
@@ -290,9 +287,7 @@ struct fts_hw_platform_data {
 	int x_axis_max;
 	int y_axis_max;
 	bool auto_fw_update;
-#ifdef TOUCHSCREEN_HEATMAP
 	bool heatmap_mode_full_init;
-#endif
 	struct drm_panel *panel;
 	u32 initial_panel_index;
 	u32 *force_pi_cfg_ver;
@@ -324,13 +319,12 @@ typedef enum {
  *			(LOCAL_HEATMAP_WIDTH * LOCAL_HEATMAP_HEIGHT)
  * FTS_HEATMAP_FULL	- read full mutual sense strength frame
  */
-#ifdef TOUCHSCREEN_HEATMAP
 enum {
 	FTS_HEATMAP_OFF		= 0,
 	FTS_HEATMAP_PARTIAL	= 1,
 	FTS_HEATMAP_FULL	= 2
 };
-#endif
+
 /*
   * Forward declaration
   */
@@ -405,9 +399,13 @@ struct fts_ts_info {
 	struct completion bus_resumed;		/* resume_work complete */
 
 	struct pm_qos_request pm_qos_req;
-#ifdef TOUCHSCREEN_HEATMAP
+
 	struct v4l2_heatmap v4l2;
+
+#ifdef CONFIG_TOUCHSCREEN_OFFLOAD
+	struct touch_offload_context offload;
 #endif
+
 	struct delayed_work fwu_work;	/* Work for fw update */
 	struct workqueue_struct *fwu_workqueue;	/* Fw update work queue */
 	event_dispatch_handler_t *event_dispatch_table;	/* Dispatch table */
@@ -460,9 +458,9 @@ struct fts_ts_info {
 	int stylus_enabled;	/* Stylus mode */
 	int cover_enabled;	/* Cover mode */
 	int grip_enabled;	/* Grip mode */
-#ifdef TOUCHSCREEN_HEATMAP
+
 	int heatmap_mode;	/* heatmap mode*/
-#endif
+
 	/* Stop changing motion filter and keep fw design */
 	bool use_default_mf;
 	/* Motion filter finite state machine (FSM) state */
@@ -511,4 +509,3 @@ extern int fts_proc_remove(void);
 int fts_set_bus_ref(struct fts_ts_info *info, u16 ref, bool enable);
 
 #endif
-
