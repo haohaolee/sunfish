@@ -61,6 +61,8 @@
 #include <linux/input/mt.h>
 #endif
 
+#include <linux/input/touch_offload.h>
+
 #include <drm/drm_panel.h>
 #include <video/display_timing.h>
 
