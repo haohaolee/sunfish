@@ -9,7 +9,41 @@ function update_nocfi_config() {
     -d LTO_CLANG \
     -d CFI \
     -d CFI_PERMISSIVE \
-    -d CFI_CLANG
+    -d CFI_CLANG \
+    -e CONFIG_TOUCHSCREEN_FTS \
+    -e CONFIG_TOUCHSCREEN_OFFLOAD \
+    -e CONFIG_QCA_CLD_WLAN \
+    -e CONFIG_QCA_CLD_WLAN_PROFILE="default" \
+    -e CONFIG_WIREGUARD \
+    -e CONFIG_WIREGUARD_DEBUG \
+    -e CONFIG_TCP_CONG_ADVANCED \
+    -e CONFIG_TCP_CONG_WESTWOOD \
+    -e CONFIG_TCP_CONG_HSTCP \
+    -e CONFIG_TCP_CONG_HYBLA \
+    -e CONFIG_TCP_CONG_VEGAS \
+    -e CONFIG_TCP_CONG_SCALABLE \
+    -e CONFIG_TCP_CONG_LP \
+    -e CONFIG_TCP_CONG_VENO \
+    -e CONFIG_TCP_CONG_YEAH \
+    -e CONFIG_TCP_CONG_ILLINOIS \
+    -e CONFIG_TCP_CONG_DCTCP \
+    -e CONFIG_TCP_CONG_BBR \
+    -d CONFIG_DEFAULT_CUBIC \
+    -e CONFIG_DEFAULT_BBR \
+    -d CONFIG_LOCALVERSION_AUTO \
+    -e RD_LZMA \
+    -e RD_LZ4 \
+    -e CONFIG_EXFAT_FS \
+    -d CONFIG_EXFAT_DEBUG \
+    -d CONFIG_EXFAT_UEVENT \
+    -e CONFIG_NTFS_FS \
+    -d CONFIG_NTFS_DEBUG \
+    -e CONFIG_NTFS_RW \
+    -e CONFIG_BOEFFLA_WL_BLOCKER \
+    -e USB_UAS \
+    -e CONFIG_USB_OTG \
+    -e CONFIG_USB_OTG_FSM \
+
   (cd ${OUT_DIR} && \
    make ${CC_LD_ARG} O=${OUT_DIR} olddefconfig)
 }
