@@ -53,7 +53,7 @@
 };
 
 &sde_dp {
-	status = "disabled";
+	status = "okay";
 };
 
 &mdss_mdp {
