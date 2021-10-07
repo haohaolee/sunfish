@@ -111,7 +111,10 @@ function update_nocfi_config() {
     -d CONFIG_FS_VERITY \
     -d CONFIG_PKCS7_MESSAGE_PARSER \
     -d CONFIG_SYSTEM_TRUSTED_KEYRING \
-    
+    -e CONFIG_MEMCG \
+    -e CONFIG_MEMCG_SWAP \
+    -e CONFIG_MEMCG_SWAP_ENABLED \
+
   (cd ${OUT_DIR} && \
    make ${CC_LD_ARG} O=${OUT_DIR} olddefconfig)
 }
